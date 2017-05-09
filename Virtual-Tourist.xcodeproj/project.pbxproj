@@ -26,7 +26,7 @@
 		C77B83311EBD88D5004942EF /* PhotoNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77B83301EBD88D5004942EF /* PhotoNetworkManager.swift */; };
 		C77B83331EBD8F82004942EF /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77B83321EBD8F82004942EF /* Photo.swift */; };
 		C77B83391EBECDB3004942EF /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77B83381EBECDB3004942EF /* PhotoCollectionViewCell.swift */; };
-		C77B833E1EC014F8004942EF /* AsyncImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = C77B833D1EC014F8004942EF /* AsyncImageView.m */; };
+		C77B83451EC163EF004942EF /* AsyncImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = C77B83441EC163EF004942EF /* AsyncImageView.m */; };
 		C7A6F2EE1EB6ADCF0055EBD8 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A6F2ED1EB6ADCF0055EBD8 /* UserDefaultsManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -52,9 +52,9 @@
 		C77B83301EBD88D5004942EF /* PhotoNetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoNetworkManager.swift; sourceTree = "<group>"; };
 		C77B83321EBD8F82004942EF /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		C77B83381EBECDB3004942EF /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
-		C77B833B1EC014EE004942EF /* AsyncImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncImageView.h; sourceTree = "<group>"; };
 		C77B833C1EC014F7004942EF /* Virtual-Tourist-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Virtual-Tourist-Bridging-Header.h"; sourceTree = "<group>"; };
-		C77B833D1EC014F8004942EF /* AsyncImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncImageView.m; sourceTree = "<group>"; };
+		C77B83431EC163EF004942EF /* AsyncImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncImageView.h; sourceTree = "<group>"; };
+		C77B83441EC163EF004942EF /* AsyncImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncImageView.m; sourceTree = "<group>"; };
 		C7A6F2ED1EB6ADCF0055EBD8 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -90,9 +90,8 @@
 		C754585E1EB69C3C00635344 /* Virtual-Tourist */ = {
 			isa = PBXGroup;
 			children = (
-				C77B833B1EC014EE004942EF /* AsyncImageView.h */,
-				C77B833D1EC014F8004942EF /* AsyncImageView.m */,
 				C754585F1EB69C3C00635344 /* AppDelegate.swift */,
+				C77B83421EC163EF004942EF /* AsyncImageView */,
 				C7A6F2EF1EB6B1DE0055EBD8 /* Model */,
 				C77B832B1EBC3832004942EF /* DataSource */,
 				C77B82541EBADED2004942EF /* Helpers */,
@@ -142,6 +141,15 @@
 				C77B832C1EBC3832004942EF /* CollectionViewDataSource.swift */,
 			);
 			path = DataSource;
+			sourceTree = "<group>";
+		};
+		C77B83421EC163EF004942EF /* AsyncImageView */ = {
+			isa = PBXGroup;
+			children = (
+				C77B83431EC163EF004942EF /* AsyncImageView.h */,
+				C77B83441EC163EF004942EF /* AsyncImageView.m */,
+			);
+			path = AsyncImageView;
 			sourceTree = "<group>";
 		};
 		C7A6F2EC1EB6ADB70055EBD8 /* Managers */ = {
@@ -250,7 +258,7 @@
 				C77B825F1EBAF3E2004942EF /* Pin.swift in Sources */,
 				C77B82611EBC24EB004942EF /* MapDataManager.swift in Sources */,
 				C7A6F2EE1EB6ADCF0055EBD8 /* UserDefaultsManager.swift in Sources */,
-				C77B833E1EC014F8004942EF /* AsyncImageView.m in Sources */,
+				C77B83451EC163EF004942EF /* AsyncImageView.m in Sources */,
 				C77B825D1EBAF376004942EF /* VirtualTourist.xcdatamodeld in Sources */,
 				C77B83311EBD88D5004942EF /* PhotoNetworkManager.swift in Sources */,
 				C77B832D1EBC3832004942EF /* CollectionViewDataSource.swift in Sources */,
