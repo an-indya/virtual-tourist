@@ -6,6 +6,8 @@
 //  Copyright © 2017 Anindya Sengupta. All rights reserved.
 //
 
+//Inspired from objc.io - Core Data Book by Florian Kugler and Daniel Eggert
+
 import UIKit
 import CoreData
 
