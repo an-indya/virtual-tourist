@@ -52,6 +52,7 @@ enum CopyText: String {
 struct URLs {
     static let udacityBaseURL = "https://www.udacity.com"
     static let parseUdacityBaseURL = "https://parse.udacity.com"
+    static let flickrBaseURL = "https://api.flickr.com/services/rest/?&"
 }
 
 struct Endpoints {
@@ -60,8 +61,15 @@ struct Endpoints {
     static let getUserInfo = "/api/users/"
     static let getStudentLocations = "/parse/classes/StudentLocation"
     static let updateStudentLocations = "/parse/classes/StudentLocation/{objectId}"
+    static let flickrURLPath = "/services/rest/"
 }
 
 struct Keys {
     static let kRegionKey = "kRegionKey"
+}
+
+var documentsDirectory : String {
+    let path = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
+    let documentDirectoryPath:String = path[0]
+    return documentDirectoryPath
 }
