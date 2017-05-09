@@ -4,7 +4,7 @@
 //
 //  Created by Anindya Sengupta on 5/4/17.
 //  Copyright © 2017 Udacity. All rights reserved.
-//
+//  Inspired from objc.io - Core Data Book by Florian Kugler and Daniel Eggert
 
 import UIKit
 import CoreData
