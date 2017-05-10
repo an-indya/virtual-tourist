@@ -15,7 +15,7 @@ enum methodName: String {
     case PUT
 }
 
-class PhotoNetworkManager {
+class PhotoNetworkManager: NSObject {
 
     class func getFlickrImages(for location: CLLocationCoordinate2D, page: Int) {
 
@@ -42,13 +42,16 @@ class PhotoNetworkManager {
                     if let urlList = parse(json: responseJson) {
                         for url in urlList {
                             if let imageURL = URL(string: url) {
-                                Downloader.load(url: imageURL, completion: { data in
-                                    DispatchQueue.main.async {
-                                        PhotoDataManager.insertPhoto(imageURL: url, data: data, location: location)
-                                    }
-                                })
+                                DispatchQueue.main.async {
+                                    PhotoDataManager.insertPhoto(imageURL: imageURL.absoluteString, data: nil, location: location)
+                                }
                             }
                         }
+                        let deadlineTime = DispatchTime.now() + .seconds(1)
+                        DispatchQueue.main.asyncAfter(deadline: deadlineTime) {
+                            self.downloadImages(with: urlList)
+                        }
+
                     }
                 } catch {
                     print("Error: \(error.localizedDescription)")
@@ -57,6 +60,15 @@ class PhotoNetworkManager {
             task.resume()
         }
 
+
+    }
+
+    class func downloadImages (with urlList: [String]) {
+        for url in urlList {
+            Downloader.load(url: URL(string: url)!, completion: { data in
+                PhotoDataManager.updatePhoto(with: url, data: data)
+            })
+        }
 
     }
 

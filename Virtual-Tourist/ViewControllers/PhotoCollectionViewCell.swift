@@ -15,6 +15,10 @@ class PhotoCollectionViewCell: UICollectionViewCell {
 
 extension PhotoCollectionViewCell {
     func configure(for photo: Photo) {
-        image.imageURL = URL(string: photo.imageURL)
+        if let data = photo.imageData {
+            image.image = UIImage(data: data)
+        } else {
+            image.imageURL = URL(string: photo.imageURL)
+        }
     }
 }

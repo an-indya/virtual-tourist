@@ -12,7 +12,7 @@ import CoreLocation
 
 class PhotoDataManager {
 
-    class func insertPhoto (imageURL: String, data: Data, location: CLLocationCoordinate2D) {
+    class func insertPhoto (imageURL: String, data: Data?, location: CLLocationCoordinate2D) {
         if let managedObjectContext = CoreDataManager.shared.managedObjectContext {
             MapDataManager.fetch(pinLocation: location, completion: { (pins) in
                 if let pin = pins?.first {
@@ -22,6 +22,27 @@ class PhotoDataManager {
                 }
             })
 
+        }
+    }
+
+    class func updatePhoto(with url: String, data: Data) {
+        DispatchQueue.main.async {
+            if let managedObjectContext = CoreDataManager.shared.managedObjectContext {
+                let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: Photo.entityName)
+                let predicate = NSPredicate(format: "%K == %@", "imageURL", url)
+                fetchRequest.predicate = predicate
+                do {
+                    if let photo = try managedObjectContext.fetch(fetchRequest).first as? Photo {
+                        managedObjectContext.performChanges {
+                            photo.imageData = data
+                        }
+                    }
+
+                } catch {
+                    print(error.localizedDescription)
+                }
+            } else {
+            }
         }
     }
 

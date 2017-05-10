@@ -11,10 +11,10 @@ import CoreData
 
 final class Photo: NSManagedObject {
     @NSManaged public fileprivate(set) var imageURL: String
-    @NSManaged public fileprivate(set) var imageData: Data
+    @NSManaged public var imageData: Data?
     @NSManaged public fileprivate(set) var pin: Pin
 
-    static func insert(into context: NSManagedObjectContext, imageURL: String, imageData: Data, pin: Pin) -> Photo {
+    static func insert(into context: NSManagedObjectContext, imageURL: String, imageData: Data?, pin: Pin) -> Photo {
         let photo: Photo = context.insertObject()
         photo.imageURL = imageURL
         photo.imageData = imageData
